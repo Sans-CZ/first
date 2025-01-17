@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Adventure.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,12 @@ namespace Adventure.Rooms
 {
     public class Lobby : BaseRoom
     {
-        public override string Description => "room";
+        public Lobby()
+        {
+            AddItem(new Rock());
+        }
+
+        public override string Description => $"dim lobby with {string.Join(",", items)}";
 
         public override string Name => "Lobby";
     }

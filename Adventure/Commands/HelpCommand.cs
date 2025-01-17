@@ -18,6 +18,7 @@ namespace Adventure.Commands
             AnsiConsole.WriteLine();
             AnsiConsole.WriteLine("help - shows this help");
             AnsiConsole.WriteLine("quit - exits the game");
+            AnsiConsole.WriteLine("test - tests the command");
         }
     }
 }
