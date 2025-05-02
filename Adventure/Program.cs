@@ -5,10 +5,14 @@ using Spectre.Console;
 var world = new World();
 var commands = new Dictionary<string, BaseCommand>()
 {
-    { "look", new LookAroundCommand() },
+    {"look", new LookAroundCommand() },
     {"test", new TestCommand() },
-    { "help", new HelpCommand() },
-    { "quit", new QuitCommand() }
+    {"help", new HelpCommand() },
+    {"quit", new QuitCommand() },
+    {"go", new GoCommand() },
+    {"pickup", new PickupCommand() },
+    {"inv", new InventoryCommand() },
+    {"use", new UseCommand() }
 };
 
 AnsiConsole.MarkupLine(world.Intro);

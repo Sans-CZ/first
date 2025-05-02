@@ -17,5 +17,7 @@ namespace Adventure.Rooms
         public override string Description => $"dim lobby with {string.Join(",", items)}";
 
         public override string Name => "Lobby";
+
+        public override bool Locked { get; set; } = false;
     }
 }

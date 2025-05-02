@@ -10,5 +10,17 @@ namespace Adventure.Items
     {
         public abstract string Name { get; }
         public abstract string Description { get; }
+        public abstract int Weight { get; }
+
+        public virtual void Use (World world)
+        {
+
+        }
+
+        public virtual Usability IsUsable { get; } = Usability.None;
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

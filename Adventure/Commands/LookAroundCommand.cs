@@ -12,7 +12,16 @@ namespace Adventure.Commands
     {
         public override void Execute(World world, params string[] @params)
         {
-            AnsiConsole.MarkupLine($"You looked around and see a [green]{world.CurrentRoom.Description}[/]");
+            AnsiConsole.MarkupLine($"You looked around and see that you are in a [green]{world.CurrentRoom.Description}[/]");
+            if (world.CurrentRoom.items.Count == 0)
+            {
+                AnsiConsole.MarkupLine("[red]You did not find anything[/]");
+            }
+            else
+            {
+                AnsiConsole.MarkupLine($"You found a pickable [blue]{string.Join(",", world.CurrentRoom.items)}[/]");
+            }
+            AnsiConsole.MarkupLine($"You also see that you can go to [red]{string.Join(",", world.CurrentRoom.neighbours)}[/]");
         }
     }
 }
